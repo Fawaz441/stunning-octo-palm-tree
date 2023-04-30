@@ -183,3 +183,33 @@ video.covers {
   animation:bounce 1.2s ease-in-out infinite alternate-reverse;
 }
 
+.feature-card{
+  transition: all 0.4s ease-in-out;
+}
+
+.feature-card:hover{
+  background: linear-gradient(109.88deg, #38DBFF 1.73%, #243AFF 107.46%);
+}
+
+.feature-card:hover > svg{
+  stroke:#fff;
+}
+
+.feature-card:hover > .feature-card-content{
+  transform:translateY(-5px)
+}
+
+.feature-card:hover .feature-card-header,
+.feature-card:hover .feature-card-paragraph{
+  color:#fff !important;
+  background:none !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.feature-card:hover svg path{
+  fill:white;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  display:none !important;
+}

@@ -34,7 +34,7 @@ const Global = () => {
 				/>
 			)}
 
-			<div className="flex flex-col items-center">
+			<div className="flex flex-col items-center relative">
 				<h1 className="font-[400] text-[40px] md:text-[128px] text-start leading-[60px] mb-[42px]">
 					TIA IS GLOBAL
 				</h1>

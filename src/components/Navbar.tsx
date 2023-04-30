@@ -9,20 +9,23 @@ interface NavItemsProps {
 }
 
 const NavItem: React.FC<NavItemsProps> = ({ href, label }) => {
-  const router = useRouter();
-  const [active, setActive] = useState(false);
+  const router = useRouter()
 
-  const handleClick = () => {
-    setActive(!active);
-  };
+  const checkIfActive = () => {
+    if(href==="/"){
+      return router.pathname==="/"&&router.asPath==="/"
+    }
+    return router?.asPath?.toLowerCase() === href.toLowerCase()
+  }
+
+
+  const isActive = checkIfActive()
+
 
   return (
     <Link href={href} legacyBehavior>
       <a
-        className={`text-[16px] font-semibold ${router.pathname === href ? "active" : ""} ${
-          active ? "active" : ""
-        }`}
-        onClick={handleClick}
+        className={`text-[16px] font-semibold ${isActive ? "active" : ""} `}
       >
         {label}
       </a>
@@ -40,8 +43,8 @@ const DesktopNavbar = () => {
         <NavItem href="/" label="Home" />
         <NavItem href="/#Features" label="Features" />
         <NavItem href="/Whitepaper" label="Whitepaper" />
-        <NavItem href="/#faq" label="Faq" />
-        <NavItem href="/#contact" label="Contact Us" />
+        <NavItem href="/#Faq" label="Faq" />
+        <NavItem href="/#Contact" label="Contact Us" />
       </div>
       
       <div className="">

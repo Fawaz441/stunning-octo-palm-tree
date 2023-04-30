@@ -2,7 +2,8 @@ import Image from 'next/image';
 import bg from '../../public/bg.svg';
 import frost from '../../public/frost.svg';
 import Video from './VideoBackground';
-
+import ArrowLeft from "../icons/arrow-circle-left.svg"
+import ArrowRight from "../icons/arrow-circle-right.svg"
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -25,6 +26,7 @@ interface ProjectItemsProp {
 	icon?: string;
 	btnColor?: string;
 }
+
 
 const ProjectItem: React.FC<ProjectItemsProp> = ({
 	bgColor,
@@ -75,14 +77,17 @@ const Project = () => {
 	return (
 		<>
 			<div className="relative p-5 md:p-14 ">
+				<div className='absolute top-0 left-0 h-full w-full bg-black/[.7]'></div>
 				<Video
 					source="/project.mp4"
 					fallbackImage="projectfallback.svg"
 					className="covers"
 				/>
-				<h1 className="font-bold text-[40px] text-center leading-[51px] mb-[64px]">
+				<h1 className="relative font-bold text-[40px] text-center leading-[51px] mb-[64px]">
 					OUR PROJECTS
 				</h1>
+				<ArrowLeft className="hidden md:block swiper-arrow-left absolute top-[50%] translate-y-[-50%] left-[22px] cursor-pointer"/>
+				<ArrowRight className="hidden md:block swiper-arrow-right absolute top-[50%] translate-y-[-50%] right-[22px] cursor-pointer"/>
 				<Swiper
 					effect={'coverflow'}
 					grabCursor={true}
@@ -108,7 +113,7 @@ const Project = () => {
 						slideShadows: false,
 					}}
 					// scrollbar={true}
-					navigation={true}
+					navigation={{prevEl:".swiper-arrow-left",nextEl:".swiper-arrow-right"}}
 					pagination={{ clickable: true }}
 					modules={[
 						Keyboard,

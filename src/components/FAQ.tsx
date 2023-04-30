@@ -71,7 +71,7 @@ const FAQComponent:React.FC<FAQComponentProps> = ({ data }) => {
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="bg-[#0A0F20] faq w-full min-h-[530px] py-[70px] md:py-[90px] flex justify-center">
+    <section id="Faq" className="bg-[#0A0F20] faq w-full min-h-[530px] py-[70px] md:py-[90px] flex justify-center">
       <div className="px-[20px] md:px-0 w-full flex flex-col items-center justify-center md:max-w-[813px]">
           <header className="col-span-1 font-bold text-[24px] md:text-[48px] w-full text-center">
              Frequently Asked Questions
